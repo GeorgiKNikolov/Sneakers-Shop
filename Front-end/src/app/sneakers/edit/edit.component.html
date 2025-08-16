@@ -1,0 +1,207 @@
+<div class="upload-wrapper">
+  <h3 class="upload-title">Edit poster</h3>
+  <form #form="ngForm" (ngSubmit)="edit(form)">
+    <div class="upload-row">
+      <label for="photo">Photo</label>
+      <input
+        type="text"
+        id="foto"
+        name="photo"
+        placeholder="Photo"
+        required
+        ngModel
+        #inputPhoto="ngModel"
+        [appImage]="inputPhoto.value"
+        value="{{ sneakers.photo }}"
+      />
+    </div>
+    @if (inputPhoto?.touched) {
+    <div>
+      @if (inputPhoto?.errors?.['required']) {
+      <p class="error-message">Photo is required!</p>
+      } @if(inputPhoto?.errors?.['imageValidator']){
+      <p class="error-message">Photo must be PNG or JPG format!</p>
+      }
+      <!-- -->
+    </div>
+    }
+    <div class="upload-row">
+      <label for="brand">Brand</label>
+      <input
+        type="text"
+        id="brand"
+        name="brand"
+        placeholder="Brand"
+        required
+        ngModel
+        #inputBrand="ngModel"
+        value="{{ sneakers.brand }}"
+      />
+    </div>
+    @if (inputBrand?.touched) {
+    <div>
+      @if (inputBrand?.errors?.['required']) {
+      <p class="error-message">Brand is required!</p>
+      }
+    </div>
+    }
+    <div class="upload-row">
+      <label for="activity">Activity</label>
+      <input
+        type="text"
+        id="activity"
+        name="activity"
+        placeholder="Activity"
+        required
+        ngModel
+        #inputActivity="ngModel"
+        value="{{ sneakers.activity }}"
+      />
+    </div>
+    @if (inputActivity?.touched) {
+    <div>
+      @if (inputActivity?.errors?.['required']) {
+      <p class="error-message">Activity is required!</p>
+      }
+    </div>
+    }
+    <div class="upload-row">
+      <label for="season">Season</label>
+      <input
+        type="text"
+        id="season"
+        name="season"
+        placeholder="Season"
+        required
+        ngModel
+        #inputSeason="ngModel"
+        value="{{ sneakers.season }}"
+      />
+    </div>
+    @if (inputSeason?.touched) {
+    <div>
+      @if (inputSeason?.errors?.['required']) {
+      <p class="error-message">Season is required!</p>
+      }
+    </div>
+    }
+    <div class="upload-row">
+      <label for="material">Material</label>
+      <input
+        type="text"
+        id="material"
+        name="material"
+        placeholder="Material"
+        required
+        ngModel
+        #inputMaterial="ngModel"
+        value="{{ sneakers.material }}"
+      />
+    </div>
+    @if (inputMaterial?.touched) {
+    <div>
+      @if (inputMaterial?.errors?.['required']) {
+      <p class="error-message">Material is required!</p>
+      }
+    </div>
+    }
+    <div class="upload-row">
+      <label for="technology">Technology</label>
+      <input
+        type="text"
+        id="technology"
+        name="technology"
+        placeholder="Technology"
+        required
+        ngModel
+        #inputTechnology="ngModel"
+        value="{{ sneakers.technology }}"
+      />
+    </div>
+    @if (inputTechnology?.touched) {
+    <div>
+      @if (inputTechnology?.errors?.['required']) {
+      <p class="error-message">Technology is required!</p>
+      }
+    </div>
+    }
+    <div class="upload-row">
+      <label for="size">Size</label>
+      <input
+        type="text"
+        id="size"
+        name="size"
+        placeholder="Size"
+        required
+        ngModel
+        #inputSize="ngModel"
+        [appNumber]="inputSize.value"
+        value="{{ sneakers.size }}"
+      />
+    </div>
+    @if (inputSize?.touched) {
+    <div>
+      @if (inputSize?.errors?.['required']) {
+      <p class="error-message">Size is required!</p>
+      } @if (inputSize?.errors?.['isNumberValidator']) {
+      <p class="error-message">Size must be number!</p>
+      }
+    </div>
+    }
+      <div class="upload-row">
+      <label for="prise">Prise</label>
+      <input
+        type="text"
+        id="prise"
+        name="prise"
+        placeholder="Prise"
+        required
+        ngModel
+        #inputPrise="ngModel"
+        [appNumber]="inputPrise.value"
+        value="{{ sneakers.prise }}"
+      />
+    </div>
+    @if (inputPrise?.touched) {
+    <div>
+      @if (inputPrise?.errors?.['required']) {
+      <p class="error-message">Prise is required!</p>
+      } @if (inputPrise?.errors?.['isNumberValidator']) {
+      <p class="error-message">Prise must be number!</p>
+      }
+    </div>
+    }
+    <div class="upload-row">
+      <label for="description">Description</label>
+      <textarea
+        type="text"
+        id="description"
+        name="description"
+        placeholder="Description"
+        required
+        minlength="10"
+        ngModel
+        #inputDescription="ngModel"
+        value="{{sneakers.description}}"
+      ></textarea>
+      @if (inputDescription?.touched) {
+      <div>
+        @if (inputDescription?.errors?.['required']) {
+        <p class="error-message">Description is required!</p>
+        }
+        <!--  -->
+        @if (inputDescription?.errors?.['minlength']) {
+        <p class="error-message">Description must be at least 10 characters!</p>
+        }
+      </div>
+      }
+    </div>
+    <button
+      class="upload-button"
+      [disabled]="form.invalid"
+      [style]="{ backgroundColor: form.invalid ? '#a1a0a0' : 'black' }"
+    >
+      Upload
+    </button>
+  </form>
+</div>

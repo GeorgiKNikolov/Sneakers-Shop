@@ -1,0 +1,56 @@
+
+.profile-card {
+  width: 400px;
+  height: 400px;
+  background-color: #eeeeee;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-style: oblique;
+  border-radius: 10px;
+  font-weight: bolder;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  height: 300px;
+}
+
+input{
+    border-radius: 4px;
+}
+label{
+    font-size: larger;
+}
+
+.btns{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+button {
+  background-color: black;
+  border-radius: 4px;
+  height: 24px;
+  width: 80px;
+}
+
+a{
+  background-color: black;
+  border-radius: 4px;
+  height: 24px;
+  width: 80px;
+  text-align: center;
+  padding-top: 4px;
+}
+
+.error-message{
+    color: red;
+  }

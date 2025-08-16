@@ -1,0 +1,13 @@
+<div class="profile-card">
+    <img src={{user.image}} alt="">
+    <p>Username: {{user.username}}</p>
+    <p>Email: {{user.email}} </p>
+    <p>Phone: {{user.tel}}</p>
+    <div>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-square-instagram"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-linkedin"></i>
+    </div>
+    <a [routerLink]="['/edit-user-info', user._id]">Edit Info</a>
+   </div>

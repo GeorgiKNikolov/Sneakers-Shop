@@ -1,0 +1,108 @@
+.upload-wrapper {
+    background-image: url("https://hopkicks.pk/image/catalog/61e2oFbb97L.SS800.jpg");
+    background-repeat: no-repeat;
+    background-size: 600px 600px;
+    height: 600px;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid black;
+  }
+  .upload-wrapper h3 {
+    font-size: 30px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .upload-wrapper form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    height: 550px;
+    row-gap: normal;
+  }
+  .upload-wrapper label {
+    font-weight: bold;
+  }
+  
+  .upload-row {
+    display: flex;
+    flex-direction: column;
+  }
+  .upload-wrapper input {
+    border-radius: 4px;
+    height: 26px;
+  }
+  .upload-wrapper textarea {
+    border-radius: 4px;
+    height: 100px;
+    width: 300px;
+  }
+  .upload-button {
+    background-color: black;
+    border-radius: 4px;
+    height: 24px;
+    width: 80px;
+  }.upload-wrapper {
+    background-image: url("https://hopkicks.pk/image/catalog/61e2oFbb97L.SS800.jpg");
+    background-repeat: no-repeat;
+    background-size: 600px 600px;
+    height: 600px;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid black;
+  }
+  .upload-wrapper h3 {
+    font-size: 30px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .upload-wrapper form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    height: 550px;
+    row-gap: normal;
+  }
+  .upload-wrapper label {
+    font-weight: bold;
+  }
+  
+  .upload-row {
+    display: flex;
+    flex-direction: column;
+  }
+  .upload-wrapper input {
+    border-radius: 4px;
+    height: 26px;
+  }
+  .upload-wrapper textarea {
+    border-radius: 4px;
+    height: 100px;
+    width: 300px;
+  }
+  .upload-button {
+    background-color: black;
+    border-radius: 4px;
+    height: 24px;
+    width: 80px;
+  }
+      .error-message{
+    color: red;
+  }

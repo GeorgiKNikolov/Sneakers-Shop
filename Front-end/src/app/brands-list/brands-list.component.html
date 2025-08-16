@@ -1,0 +1,21 @@
+<p class="prompt">Join us, <a routerLink="/register">Register</a> and find pair for your activity!</p>
+@if(!isLoading){
+<app-loader />
+}@else {
+<div class="card-container">
+  @for (sneaker of sneakers; track $index) {
+  <div class="card">
+    <h2 class="c-h"><img src="{{ logo.logo }}" alt="#" /></h2>
+    <img src="{{ sneaker.photo }}" alt="" />
+    <div class="card-text">
+      <h4>
+        <b>{{ sneaker.brand }}</b>
+      </h4>
+      <p>{{ sneaker.activity }}</p>
+      <p>{{ sneaker.prise }} <i class="fa-solid fa-euro-sign"></i></p>
+    </div>
+  </div>
+  }
+</div>
+}
+

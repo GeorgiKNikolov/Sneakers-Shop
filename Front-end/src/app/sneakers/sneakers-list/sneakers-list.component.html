@@ -1,0 +1,24 @@
+<div class="gallery-container">
+  @if (!isLoading) {
+  <app-loader />
+  }@else { @for (sneaker of sneakers; track $index) {
+  <a class="pr product{{ index }}" [routerLink]="sneaker._id">
+    <img class="pr-img" src="{{ sneaker.photo }}" alt="" />
+    <div class="pr-text">
+      <p>
+        <b>BRAND:</b> <br />
+        {{ sneaker.brand }} 
+      </p>
+      <p>
+        <b>ACTIVITY:</b> <br />
+        {{ sneaker.activity }}
+      </p>
+      <p>
+        <b>SEASON:</b> <br />
+        {{ sneaker.season }}
+      </p>
+      <p><b>MATERIAL:</b> {{ sneaker.material }}</p>
+    </div>
+  </a>
+  } }
+</div>

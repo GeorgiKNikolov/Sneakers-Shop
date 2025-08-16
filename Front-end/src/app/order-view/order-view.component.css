@@ -1,0 +1,22 @@
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: bolder;
+  align-items: center;
+}
+
+p {
+  font-size: 50px;
+  font-weight: bolder;
+  color: black;
+}
+
+a {
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: 150px;
+  border-radius: 6px;
+}

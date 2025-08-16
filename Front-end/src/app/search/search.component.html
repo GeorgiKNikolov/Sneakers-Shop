@@ -1,0 +1,40 @@
+<div class="search-container">
+  <div class="search-bar">
+    <div class="single-search">
+      <input
+        class="custom-input"
+        type="text"
+        name="search"
+        placeholder="Search brand"
+        #inputBrand
+      />
+      <input
+        class="custom-input"
+        type="text"
+        name="search"
+        placeholder="Search activity"
+        #inputActivity
+      />
+      <button class="search-btn" (click)="onSearch(inputBrand.value, inputActivity.value)">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+      
+    </div>
+  
+  </div>
+  <div class="card-container">
+    @for (sneaker of sneakers; track $index) {
+ <div class="card">
+  <a [routerLink]="sneaker._id">
+      <h2 class="c-h">{{sneaker.brand}}</h2>
+      <img src={{sneaker.photo}} alt="" />
+      <div class="card-text">
+        <h4><b>{{sneaker.brand}}</b></h4>
+        <p>{{sneaker.activity}}</p>
+        <p>{{sneaker.prise}} <i class="fa-solid fa-euro-sign"></i></p>
+      </div>
+      </a>
+    </div>
+    }
+  </div>
+</div>

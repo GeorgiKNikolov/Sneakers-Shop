@@ -1,0 +1,13 @@
+
+<div class="container" >
+    <div class="home-cont">
+    <p>"Your Perfect Pair Awaits - Place Your Order & Own It!"</p>
+       <p>"Got Sneaker For Sell? Drop Your Offer Here!"</p>
+       <p>"Don’t Just Walk In - Walk Out with a Deal! </p>
+       <!-- TODO Is logged user -->
+        @if (!isLoggedIn) {
+            <div><a routerLink="/login">Login</a><br>Haven't account??<br><a routerLink="/register">Register</a></div>
+        }
+       
+    </div>
+</div>

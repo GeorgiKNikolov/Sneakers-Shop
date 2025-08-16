@@ -1,0 +1,14 @@
+.box-err{
+    position: relative;
+    top: -100px;
+    display: flex;
+
+}
+p{
+    font-size: 50px;
+    font-weight: bolder;
+}
+a{
+    color: black;
+    text-decoration: underline;
+}

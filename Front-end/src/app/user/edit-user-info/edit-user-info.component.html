@@ -1,0 +1,83 @@
+<div class="profile-card">
+  <form #form="ngForm" (ngSubmit)="editInfo(form)">
+    <label for="photo">Photo:</label>
+    <input
+      type="text"
+      name="photo"
+      id="photo"
+      placeholder="Photo"
+      required
+      ngModel
+      #inputPhoto="ngModel"
+      [(ngModel)]="user.image"
+    />
+    @if (inputPhoto?.touched) {
+    <div>
+      @if (inputPhoto?.errors?.["required"]) {
+      <p class="error-message">Image is required!</p>
+      }
+    </div>
+    }
+    <label for="username">Username:</label>
+    <input
+      type="text"
+      name="username"
+      id="username"
+      required
+      ngModel
+      minlength="5"
+      #inputUsername="ngModel"
+      [(ngModel)]="user.username"
+    />
+    @if (inputUsername?.touched) {
+    <div>
+      @if (inputUsername?.errors?.["minlength"]) {
+      <p class="error-message">Username must be at least 5 characters!</p>
+      } @if (inputUsername?.errors?.['required']) {
+      <p class="error-message">Username is required!</p>
+      }
+    </div>
+    }
+    <label for="email">Email:</label>
+    <input
+      type="text"
+      name="email"
+      id="email"
+      required
+      ngModel
+      [(ngModel)]="user.email"
+      [appEmail]="domains"
+       #inputEmail="ngModel"
+    />
+    @if (inputEmail?.touched) {
+    <div>
+      @if (inputEmail?.errors?.['emailValidator']) {
+      <p class="error-message">Email is not valid!</p>
+      } @if (inputEmail?.errors?.['required']) {
+      <p class="error-message">Email is required!</p>
+      }
+    </div>
+    }
+    <label for="tel">Phone number:</label>
+    <input
+      type="text"
+      name="tel"
+      id="tel"
+      required
+      ngModel
+      #inputTel="ngModel"
+      [(ngModel)]="user.tel"
+    />
+    @if (inputTel?.touched) {
+    <div>
+      @if (inputTel?.errors?.["required"]) {
+      <p class="error-message">Phone is required!</p>
+      }
+    </div>
+    }
+    <div class="btns">
+      <button>Edit</button>
+      <a routerLink="/profile">Cancel</a>
+    </div>
+  </form>
+</div>

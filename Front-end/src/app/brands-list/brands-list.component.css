@@ -1,0 +1,60 @@
+.card-container {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(4, 1fr);
+  overflow: auto;
+}
+
+.card {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  background-color: #d0cfcf;
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+h2.c-h {
+  border-bottom: 2px solid black;
+  border-radius: 8px;
+  background-color: black;
+  align-items: center;
+}
+
+.card img {
+  height: 150px;
+  width: 200px;
+  margin-left: 20px;
+}
+.c-h img {
+  height: 40px;
+  width: 40px;
+}
+
+.prompt {
+  font-size: 50px;
+  font-weight: bolder;
+  color: black;
+  position: relative;
+  top: -100px;
+}
+
+a {
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: 120px;
+  border-radius: 6px;
+  font-size: 40px;
+}

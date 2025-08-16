@@ -1,0 +1,126 @@
+<div class="wrapper">
+  <div class="title"><h2>Register Form</h2></div>
+  <form action="#" (ngSubmit)="register()" [formGroup]="form">
+    <div class="row">
+      <i class="fas fa-user"></i>
+      <input
+        type="text"
+        placeholder="Username"
+        name="username"
+        required
+        formControlName="username"
+      />
+    </div>
+    @if (form.get('username')?.touched) {
+    <div>
+      @if (form.get('username')?.errors?.['required']) {
+      <p class="error-message">Username is required!</p>
+      }
+      <!--  -->
+      @if (form.get('username')?.errors?.['minlength']) {
+      <p class="error-message">Username must be at least 5 characters!</p>
+      }
+    </div>
+    }
+    <div class="row">
+      <i class="fa-solid fa-envelope"></i>
+      <input
+        type="text"
+        placeholder="Email"
+        name="email"
+        required
+        formControlName="email"
+      />
+    </div>
+    @if (form.get('email')?.touched) {
+    <div>
+      @if (form.get('email')?.errors?.['required']) {
+      <p class="error-message">Email is required!</p>
+      }
+      <!--  -->
+      @if (form.get('email')?.errors?.['emailValidator']) {
+      <p class="error-message">Email is not valid!</p>
+      }
+    </div>
+    }
+    <div class="row">
+      <i class="fa-solid fa-phone"></i>
+      <input
+        type="text"
+        placeholder="Phone"
+        name="tel"
+        required
+        formControlName="tel"
+      />
+    </div>
+    @if (form.get('tel')?.touched) {
+    <div>
+      @if (form.get('tel')?.errors?.['required']) {
+      <p class="error-message">Phone is required!</p>
+      }
+    </div>
+    }
+    <div class="row">
+      <i class="fa-solid fa-image-portrait"></i>
+      <input
+        type="text"
+        placeholder="Image"
+        name="image"
+        required
+        formControlName="image"
+      />
+    </div>
+    @if (form.get('image')?.touched) {
+    <div>
+      @if (form.get('image')?.errors?.['required']) {
+      <p class="error-message">Image is required!</p>
+      }
+    </div>
+    }
+    <div formGroupName="passGroup">
+      <div class="row">
+        <i class="fas fa-lock"></i>
+        <input
+          type="password"
+          placeholder="*******"
+          name="password"
+          required
+          formControlName="password"
+        />
+      </div>
+
+      @if (passGroup?.get('password')?.touched) {
+      <div>
+        @if (passGroup?.get('password')?.errors?.['required']) {
+        <p class="error-message">Password is required!</p>
+        }
+      </div>
+      }
+
+      <div class="row">
+        <i class="fas fa-lock"></i>
+        <input
+          type="Password"
+          placeholder="*******"
+          name="rePassword"
+          required
+          formControlName="rePassword"
+        />
+      </div>
+      @if (passGroup?.get('rePassword')?.touched) {
+      <div>
+        @if ( passGroup?.errors?.['matchPasswordValidator'] ||
+        passGroup?.errors?.['required'] ) {
+        <p class="error-message">Repeat Password does not match password!</p>
+        }
+      </div>
+      }
+    </div>
+    <div class="row button">
+      <input type="submit" value="Sign Up" [disabled]="form.invalid" [style]="{backgroundColor: form.invalid? '#a1a0a0' : 'black' }" />
+    </div>
+    <div class="signup-link">
+      Have an account? <a routerLink="/login"><b>Login</b></a>
+    </div>
+  </form>
+</div>

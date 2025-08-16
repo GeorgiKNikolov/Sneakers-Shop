@@ -1,0 +1,108 @@
+<div class="container">
+  @if (isEmpty) {
+  <div class="article">
+    <h3>Comments:</h3>
+    <article>
+      @for (comment of comments; track $index) {
+      <div class="com">
+        <p><b>{{ comment.created_at | date : "yyyy/MM/dd HH:mm" }}</b></p>
+        <p><b>Username:</b> {{ comment.owner }}</p>
+        <p><b>Comment:</b> {{ comment.text }}</p>
+      </div>
+      }
+    </article>
+  </div>
+  }
+
+  <div class="details-container">
+    <img src="{{ sneakers.photo }}" alt="" />
+    <div class="flex-des">
+      <p>Description:</p>
+      <p class="spec">{{ sneakers.description }}</p>
+    </div>
+    <div class="small-details">
+      <div class="small-details">
+        <div class="flex">
+          <p>Brand:</p>
+          <p class="spec">{{ sneakers.brand }}</p>
+        </div>
+        <div class="flex">
+          <p>Activity:</p>
+          <p class="spec">{{ sneakers.activity }}</p>
+        </div>
+        <div class="flex">
+          <p>Season:</p>
+          <p class="spec">{{ sneakers.season }}</p>
+        </div>
+        <div class="flex">
+          <p>Material:</p>
+          <p class="spec">{{ sneakers.material }}</p>
+        </div>
+        <div class="flex">
+          <p>Technology:</p>
+          <p class="spec">{{ sneakers.technology }}</p>
+        </div>
+        <div class="flex">
+          <p>Size:</p>
+          <p class="spec">{{ sneakers.size }}</p>
+        </div>
+        <div class="flex">
+          <p>Prise:</p>
+          <p class="spec">
+            {{ sneakers.prise }} <i class="fa-solid fa-euro-sign"></i>
+          </p>
+        </div>
+      </div>
+      <div class="flex btns">
+        @if (isOwner) {
+        <button class="edit-btn" [routerLink]="['/edit', sneakers._id]">
+          Edit
+        </button>
+        <button class="delete-btn" (click)="remove()">Delete</button>
+        } @if(!isLiked && !isOwner){
+        <button class="like-btn" (click)="like()">
+          <i class="fa-solid fa-thumbs-up"></i>
+        </button>
+        }
+        <i class="fa-solid fa-heart">{{ sneakers.likes.length }}</i>
+        @if (!isOwner) {
+        <button
+          class="delete-btn"
+          [routerLink]="['/basket/', ownerID]"
+          (click)="addToBasket()"
+        >
+          <i class="fa-solid fa-basket-shopping"></i>
+        </button>
+        }
+        <button class="comments" (click)="toggle()">
+          <i class="fa-solid fa-comment"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  @if (clicked) {
+  <form class="comment" #form="ngForm" (submit)="addComment(form)">
+    <label for="comment">Comment:</label>
+    <button
+      [disabled]="form.invalid"
+      [style]="{ backgroundColor: form.invalid ? '#a1a0a0' : 'black' }"
+    >
+      Send
+    </button>
+    <textarea
+      name="comment"
+      id="comment"
+      type="text"
+      placeholder="Ask or comment here"
+      required
+      ngModel
+      #inputComment="ngModel"
+    ></textarea>
+
+    <button class="cancel" (click)="toggle()">
+      <i class="fa-solid fa-circle-xmark"></i>
+    </button>
+  </form>
+  }
+</div>
